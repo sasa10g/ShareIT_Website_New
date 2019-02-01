@@ -1,0 +1,54 @@
+{
+  "name": "shareit-website",
+  "private": true,
+  "version": "1.0.0",
+  "description": "ShareIT company website.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sasa10g/ShareIT_Website_New.git"
+  },
+  "contributors": [
+    {
+      "name": "Saša Gvozdenović",
+      "email": "sasagvozdenovic@hotmail.com",
+      "url": "https://sasa10.me"
+    },
+    {
+      "name": "Stefan Maretić",
+      "email": "smaretic@protonmail.com",
+      "url": "https://github.com/stefanmaretic"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sasa10g/ShareIT_Website_New/issues"
+  },
+  "homepage": "https://github.com/sasa10g/ShareIT_Website_New#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.12.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
+    "prettier": "^1.16.3",
+    "pretty-quick": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
