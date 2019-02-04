@@ -8,6 +8,7 @@ export default {
     containerGray: '#f6f6f6',
     formLabel: '#0255B6',
     formInput: '#4a4a4a',
+    linkActive: '#45baf6',
   },
   breakpoints: {
     lg: '1023px',
