@@ -1,81 +1,137 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { Component } from 'react';
+import logo from '/static/logo.png';
 
-//import '../sideDrawer/drawerToggleButton.css';
-//import './toolbar.css';
-import DrawerToggleButton from '../sideDrawer/drawerToggleButton';
+class Header extends Component {
+  state = {
+    visible: false,
+  };
 
-const toolbar = props => {
-  let visible = ['toolbar__toggle-button'];
-  if (props.hide) {
-    visible = ['toolbar__toggle-button onClickToggle'];
+  render() {
+    return (
+      <header>
+        <nav>
+          <div>
+            <a href="/">
+              <img src={logo} alt="Logo" />
+            </a>
+          </div>
+          <div className="spacer" />
+          <div className="toolbar_navigation-items menu">
+            <ul>
+              <li>
+                <NavLink activeClassName="active-link" exact to="/">
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName="active-link" to="/services">
+                  Services
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName="active-link" to="/case-studies">
+                  Case Studies
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName="active-link" to="/how-we-work">
+                  How We work
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName="active-link" to="/about-us">
+                  About Us
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName="active-link" to="/contact-us">
+                  Contact Us
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+
+          <div className={visible}>
+            <DrawerToggleButton click={props.drawerToggleClickHandler} />
+          </div>
+        </nav>
+      </header>
+    );
   }
+}
 
-  /*
-    window.onscroll = function() {scrollFunction()};
+// const toolbar = props => {
+//   let visible = ['toolbar__toggle-button'];
+//   if (props.hide) {
+//     visible = ['toolbar__toggle-button onClickToggle'];
+//   }
 
-    function scrollFunction() {
-        if (window.location.href === "http://localhost:3000/test/" && document.body.scrollTop < 360 && document.documentElement.scrollTop < 360) {
-            document.querySelector("header").classList = ""
-        } else {
-                document.querySelector("header").className = "toolbar-bg"
-            }
-        } 
-*/
+//   /*
+//     window.onscroll = function() {scrollFunction()};
 
-  return (
-    <header className="toolbar-bg">
-      <nav className="toolbar__navigation">
-        {/*old toggle*/}
+//     function scrollFunction() {
+//         if (window.location.href === "http://localhost:3000/test/" && document.body.scrollTop < 360 && document.documentElement.scrollTop < 360) {
+//             document.querySelector("header").classList = ""
+//         } else {
+//                 document.querySelector("header").className = "toolbar-bg"
+//             }
+//         }
+// */
 
-        <div className="logo">
-          <a href="/">
-            <img src={require('../../Assets/imgs/logo.png')} alt="logo" />
-          </a>
-        </div>
+//   return (
+//     <header className="toolbar-bg">
+//       <nav className="toolbar__navigation">
+//         {/*old toggle*/}
 
-        <div className="spacer" />
-        <div className="toolbar_navigation-items menu">
-          <ul>
-            <li>
-              <NavLink activeClassName="active-link" exact to="/">
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="active-link" to="/services">
-                Services
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="active-link" to="/case-studies">
-                Case Studies
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="active-link" to="/how-we-work">
-                How We work
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="active-link" to="/about-us">
-                About Us
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName="active-link" to="/contact-us">
-                Contact Us
-              </NavLink>
-            </li>
-          </ul>
-        </div>
+//         <div className="logo">
+//           <a href="/">
+//             <img src={require('../../Assets/imgs/logo.png')} alt="logo" />
+//           </a>
+//         </div>
 
-        <div className={visible}>
-          <DrawerToggleButton click={props.drawerToggleClickHandler} />
-        </div>
-      </nav>
-    </header>
-  );
-};
+//         <div className="spacer" />
+//         <div className="toolbar_navigation-items menu">
+//           <ul>
+//             <li>
+//               <NavLink activeClassName="active-link" exact to="/">
+//                 Home
+//               </NavLink>
+//             </li>
+//             <li>
+//               <NavLink activeClassName="active-link" to="/services">
+//                 Services
+//               </NavLink>
+//             </li>
+//             <li>
+//               <NavLink activeClassName="active-link" to="/case-studies">
+//                 Case Studies
+//               </NavLink>
+//             </li>
+//             <li>
+//               <NavLink activeClassName="active-link" to="/how-we-work">
+//                 How We work
+//               </NavLink>
+//             </li>
+//             <li>
+//               <NavLink activeClassName="active-link" to="/about-us">
+//                 About Us
+//               </NavLink>
+//             </li>
+//             <li>
+//               <NavLink activeClassName="active-link" to="/contact-us">
+//                 Contact Us
+//               </NavLink>
+//             </li>
+//           </ul>
+//         </div>
 
-export default toolbar;
+//         <div className={visible}>
+//           <DrawerToggleButton click={props.drawerToggleClickHandler} />
+//         </div>
+//       </nav>
+//     </header>
+//   );
+// };
+
+// export default toolbar;
+export default Header;
