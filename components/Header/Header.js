@@ -1,137 +1,57 @@
+/** @jsx jsx */
 import React, { Component } from 'react';
-import logo from '/static/logo.png';
+import { jsx } from '@emotion/core';
+import PropTypes from 'prop-types';
+import { withRouter } from 'next/router';
+import Logo from './Logo';
+import NavItem from './NavItem';
+import { headerStyles, navStyles, navListStyles } from './header-styles';
 
 class Header extends Component {
-  state = {
-    visible: false,
+  static propTypes = {
+    router: PropTypes.shape({
+      pathname: PropTypes.object,
+    }),
   };
+
+  componentDidMount() {
+    const { pathname } = this.props.router;
+    if (pathname === '/') {
+      // set styling for home page
+    }
+  }
+
+  componentDidUpdate() {
+    const { pathname } = this.props.router;
+    if (pathname !== '/') {
+      // set styling for non-home pages
+    } else {
+      // set styling for home page
+    }
+  }
 
   render() {
     return (
-      <header>
-        <nav>
-          <div>
-            <a href="/">
-              <img src={logo} alt="Logo" />
-            </a>
-          </div>
+      <header css={headerStyles}>
+        <nav css={navStyles}>
+          <Logo />
           <div className="spacer" />
           <div className="toolbar_navigation-items menu">
-            <ul>
-              <li>
-                <NavLink activeClassName="active-link" exact to="/">
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink activeClassName="active-link" to="/services">
-                  Services
-                </NavLink>
-              </li>
-              <li>
-                <NavLink activeClassName="active-link" to="/case-studies">
-                  Case Studies
-                </NavLink>
-              </li>
-              <li>
-                <NavLink activeClassName="active-link" to="/how-we-work">
-                  How We work
-                </NavLink>
-              </li>
-              <li>
-                <NavLink activeClassName="active-link" to="/about-us">
-                  About Us
-                </NavLink>
-              </li>
-              <li>
-                <NavLink activeClassName="active-link" to="/contact-us">
-                  Contact Us
-                </NavLink>
-              </li>
+            <ul css={navListStyles}>
+              <NavItem href="/" text="Home" />
+              <NavItem href="/services" text="Services" />
+              <NavItem href="/case-studies" text="Case Studies" />
+              <NavItem href="/how-we-work" text="How We work" />
+              <NavItem href="/about-us" text="About Us" />
+              <NavItem href="/contact-us" text="Contact Us" />
             </ul>
           </div>
 
-          <div className={visible}>
-            <DrawerToggleButton click={props.drawerToggleClickHandler} />
-          </div>
+          {/* HAMBURGER MENU */}
         </nav>
       </header>
     );
   }
 }
 
-// const toolbar = props => {
-//   let visible = ['toolbar__toggle-button'];
-//   if (props.hide) {
-//     visible = ['toolbar__toggle-button onClickToggle'];
-//   }
-
-//   /*
-//     window.onscroll = function() {scrollFunction()};
-
-//     function scrollFunction() {
-//         if (window.location.href === "http://localhost:3000/test/" && document.body.scrollTop < 360 && document.documentElement.scrollTop < 360) {
-//             document.querySelector("header").classList = ""
-//         } else {
-//                 document.querySelector("header").className = "toolbar-bg"
-//             }
-//         }
-// */
-
-//   return (
-//     <header className="toolbar-bg">
-//       <nav className="toolbar__navigation">
-//         {/*old toggle*/}
-
-//         <div className="logo">
-//           <a href="/">
-//             <img src={require('../../Assets/imgs/logo.png')} alt="logo" />
-//           </a>
-//         </div>
-
-//         <div className="spacer" />
-//         <div className="toolbar_navigation-items menu">
-//           <ul>
-//             <li>
-//               <NavLink activeClassName="active-link" exact to="/">
-//                 Home
-//               </NavLink>
-//             </li>
-//             <li>
-//               <NavLink activeClassName="active-link" to="/services">
-//                 Services
-//               </NavLink>
-//             </li>
-//             <li>
-//               <NavLink activeClassName="active-link" to="/case-studies">
-//                 Case Studies
-//               </NavLink>
-//             </li>
-//             <li>
-//               <NavLink activeClassName="active-link" to="/how-we-work">
-//                 How We work
-//               </NavLink>
-//             </li>
-//             <li>
-//               <NavLink activeClassName="active-link" to="/about-us">
-//                 About Us
-//               </NavLink>
-//             </li>
-//             <li>
-//               <NavLink activeClassName="active-link" to="/contact-us">
-//                 Contact Us
-//               </NavLink>
-//             </li>
-//           </ul>
-//         </div>
-
-//         <div className={visible}>
-//           <DrawerToggleButton click={props.drawerToggleClickHandler} />
-//         </div>
-//       </nav>
-//     </header>
-//   );
-// };
-
-// export default toolbar;
-export default Header;
+export default withRouter(Header);

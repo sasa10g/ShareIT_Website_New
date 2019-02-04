@@ -3,7 +3,8 @@
  * will import it everywhere because of eslint errors.
  */
 import React from 'react';
+import Header from '../components/Header/';
 
-const Index = () => <div>Index</div>;
+const Index = () => <Header />;
 
 export default Index;
