@@ -8,10 +8,51 @@ import NavItem from './NavItem';
 import { headerStyles, navStyles, navListStyles } from './header-styles';
 
 class Header extends Component {
+  state = {
+    links: [
+      {
+        href: '/',
+        text: 'Home',
+      },
+      {
+        href: '/services',
+        text: 'Services',
+      },
+      {
+        href: '/case-studies',
+        text: 'Case Studies',
+      },
+      {
+        href: '/how-we-work',
+        text: 'How We work',
+      },
+      {
+        href: '/about-us',
+        text: 'About Us',
+      },
+      {
+        href: '/contact-us',
+        text: 'Contact Us',
+      },
+    ],
+  };
+
   static propTypes = {
     router: PropTypes.shape({
       pathname: PropTypes.object,
     }),
+  };
+
+  setActiveLink = id => {
+    this.setState(state => ({
+      links: state.links.map((link, index) => {
+        if (index === id) {
+          return { ...link, active: true };
+        } else {
+          return { ...link, active: false };
+        }
+      }),
+    }));
   };
 
   componentDidMount() {
@@ -38,12 +79,15 @@ class Header extends Component {
           <div className="spacer" />
           <div className="toolbar_navigation-items menu">
             <ul css={navListStyles}>
-              <NavItem href="/" text="Home" />
-              <NavItem href="/services" text="Services" />
-              <NavItem href="/case-studies" text="Case Studies" />
-              <NavItem href="/how-we-work" text="How We work" />
-              <NavItem href="/about-us" text="About Us" />
-              <NavItem href="/contact-us" text="Contact Us" />
+              {this.state.links.map((link, index) => (
+                <NavItem
+                  key={link.text}
+                  href={link.href}
+                  text={link.text}
+                  active={link.active}
+                  onClick={() => this.setActiveLink(index)}
+                />
+              ))}
             </ul>
           </div>
 
