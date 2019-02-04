@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/sasa10g/ShareIT_Website_New#readme",
   "dependencies": {
+    "@emotion/core": "^10.0.7",
     "express": "^4.16.4",
     "next": "^7.0.2",
     "react": "^16.7.0",
