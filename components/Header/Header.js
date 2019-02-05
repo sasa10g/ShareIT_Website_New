@@ -39,7 +39,7 @@ class Header extends Component {
 
   static propTypes = {
     router: PropTypes.shape({
-      pathname: PropTypes.object,
+      pathname: PropTypes.string,
     }),
   };
 
