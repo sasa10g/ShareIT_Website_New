@@ -94,5 +94,5 @@ export const navItemStyles = css`
 `;
 
 export const hamburgerStyles = css`
-  ${({ visible }) => !visible && `visibility: hidden;`};
+  visibility: ${({ visible }) => (!visible ? 'hidden' : 'inherit')};
 `;
