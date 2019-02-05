@@ -31,7 +31,7 @@ export default class CustomDocument extends Document {
           />
           <meta key="type" property="og:type" content="website" />
           <link
-            href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway"
+            href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Open+Sans|Raleway"
             rel="stylesheet"
           />
         </Head>
