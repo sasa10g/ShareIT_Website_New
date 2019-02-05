@@ -12,6 +12,7 @@ export default {
   },
   breakpoints: {
     lg: '1023px',
+    sm: '768px',
   },
   fonts: {
     raleway: `'Raleway', sans-serif`,

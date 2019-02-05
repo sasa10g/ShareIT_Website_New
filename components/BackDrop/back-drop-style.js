@@ -42,8 +42,8 @@ to {
 export const sideDrawerCloseStyle = css`
   position: fixed;
   z-index: 200;
-  margin-top: 25px;
   right: 20px;
+  top: 20px;
 `;
 
 export const sectionStyles = css`
@@ -56,7 +56,7 @@ export const sectionStyles = css`
 export const menuxStyle = css`
   position: relative;
   margin: auto;
-  border: 5px solid transparent;
+  border: 1px solid transparent;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -68,7 +68,7 @@ export const menuxStyle = css`
 `;
 
 export const barStyle = css`
-  height: 5px;
+  height: 3px;
   width: 40px;
   display: block;
   margin: 10px auto;
