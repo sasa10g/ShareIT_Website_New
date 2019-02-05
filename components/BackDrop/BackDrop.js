@@ -13,7 +13,7 @@ import {
 
 const BackDrop = props => (
   <div css={sideDrawerCloseStyle} onClick={props.click}>
-    <section css={sectionStyles} className="model2">
+    <section css={sectionStyles}>
       <div css={menuxStyle}>
         <div css={barStyle} />
         <div css={barStyle} />
