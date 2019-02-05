@@ -46,7 +46,7 @@ class Header extends Component {
   }
 
   static propTypes = {
-    hamburgerButtonClickHandler: PropTypes.click,
+    hamburgerButtonClickHandler: PropTypes.func.isRequired,
     router: PropTypes.shape({
       pathname: PropTypes.object,
     }),
