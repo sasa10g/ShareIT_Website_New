@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 import {} from './side-drawer-style';
 import NavItem from '../Header/NavItem';
 import SideLogo from '../SideDrawer/SideLogo';
+import BackDrop from '../BackDrop/BackDrop';
 
 class SideDrawer extends Component {
   state = {
+    sideDrawerOpen: true,
     links: [
       {
         href: '/',
@@ -38,6 +40,7 @@ class SideDrawer extends Component {
 
   static propTypes = {
     show: PropTypes.bool,
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
@@ -58,7 +61,12 @@ class SideDrawer extends Component {
 
   render() {
     return (
-      <nav className={`side-drawer ${this.props.show ? 'open' : ''}`}>
+      <nav
+        className={`side-drawer ${
+          this.props.show && this.state.sideDrawerOpen ? 'open' : ''
+        }`}
+      >
+        {this.props.show && <BackDrop click={() => this.props.onClick()} />}
         <ul>
           {this.state.links.map((link, index) => (
             <NavItem

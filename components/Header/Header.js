@@ -6,7 +6,6 @@ import { withRouter } from 'next/router';
 import Logo from './Logo';
 import NavItem from './NavItem';
 import HamburgerButton from '../SideDrawer/HamburgerButton';
-import BackDrop from '../BackDrop/BackDrop';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import { headerStyles, navStyles, navListStyles } from './header-styles';
 
@@ -59,10 +58,6 @@ class Header extends Component {
     });
   };
 
-  backDropClickHandler = () => {
-    this.setState({ sideDrawerOpen: false });
-  };
-
   setActiveLink = id => {
     this.setState(state => ({
       sideDrawerOpen: false,
@@ -73,6 +68,12 @@ class Header extends Component {
           return { ...link, active: false };
         }
       }),
+    }));
+  };
+
+  closeSideDrawer = () => {
+    this.setState(state => ({
+      sideDrawerOpen: !state.sideDrawerOpen,
     }));
   };
 
@@ -93,10 +94,6 @@ class Header extends Component {
   }
 
   render() {
-    let backDrop;
-    if (this.state.sideDrawerOpen) {
-      backDrop = <BackDrop click={this.backDropClickHandler} />;
-    }
     return (
       <header css={headerStyles}>
         <nav css={navStyles}>
@@ -119,15 +116,13 @@ class Header extends Component {
           <HamburgerButton click={this.hamburgerButtonClickHandler} />
         </nav>
 
-        <SideDrawer show={this.state.sideDrawerOpen} />
-        {backDrop}
+        <SideDrawer
+          show={this.state.sideDrawerOpen}
+          onClick={this.closeSideDrawer}
+        />
       </header>
     );
   }
 }
 
 export default withRouter(Header);
-
-/** hide={this.state.sideDrawerOpen}
-            className={`toolbar__toggle-button ${this.props
-              .hamburgerButtonClickHandler && 'onClickToggle'}`} */
