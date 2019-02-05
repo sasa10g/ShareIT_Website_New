@@ -9,8 +9,12 @@ export default {
     formLabel: '#0255B6',
     formInput: '#4a4a4a',
     linkActive: '#45baf6',
+    sliderBorder: '#ededed',
   },
   breakpoints: {
+    xs: '375px',
+    sm: '500px',
+    md: '767px',
     lg: '1023px',
   },
   fonts: {
