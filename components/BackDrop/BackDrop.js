@@ -17,7 +17,6 @@ const BackDrop = props => (
       <div css={menuxStyle}>
         <div css={barStyle} />
         <div css={barStyle} />
-        <div css={barStyle} />
       </div>
     </section>
   </div>

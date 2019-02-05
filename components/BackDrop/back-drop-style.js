@@ -4,14 +4,14 @@ export const sideDrawerCloseStyle = css`
   position: fixed;
   z-index: 200;
   right: 20px;
-  top: 20px;
+  top: 40px;
 `;
 
 export const sectionStyles = css`
   position: fixed;
   z-index: 200;
   margin-top: 0px;
-  right: 25px;
+  right: 40px;
 `;
 
 export const menuxStyle = css`
@@ -21,25 +21,26 @@ export const menuxStyle = css`
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   cursor: pointer;
 `;
 
 export const barStyle = css`
   height: 3px;
-  width: 40px;
+  width: 30px;
   display: block;
-  margin: 10px auto;
+  margin: 6px auto;
   position: relative;
-  background-color: #3a3a3a;
+  background-color: #5e5e5e;
   -moz-border-radius: 1px;
   -webkit-border-radius: 1px;
   border-radius: 1px;
-  -moz-transition: 0.4s;
-  -o-transition: 0.4s;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+
+  &:first-child {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+
+  &:last-child {
+    transform: rotate(135deg);
+  }
 `;
