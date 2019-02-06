@@ -36,37 +36,6 @@ export const but = css`
 }
 `;
 
-export const menuIsActive = css`
-  @media only screen and (max-width: ${styles.breakpoints.sm}) {
-    .test {
-      position: absolute !important;
-      top: 500px !important;
-    }
-
-    nav {
-      display: block;
-      display: grid;
-      grid-template-columns: auto auto;
-      grid-template-areas: 'menu logo';
-      justify-items: center;
-      align-items: stretch;
-      text-align: center;
-    }
-
-    .logoStyles {
-      grid-area: logo;
-    }
-
-    .spacer {
-      display: none;
-    }
-
-    .toolbar_navigation-items menu {
-      grid-area: menu;
-    }
-  }
-`;
-
 export const sideDrawerLogo = css`
   img {
     display: block;
