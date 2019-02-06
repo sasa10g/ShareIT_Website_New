@@ -190,7 +190,6 @@ class FooterContact extends Component {
                   <button type="submit" onClick={this.handleSubmit}>
                     Send Message
                   </button>
-                  <div className="clear" />
                 </div>
               </form>
             </div>
@@ -218,7 +217,6 @@ class FooterContact extends Component {
                   </p>
                 </div>
               </div>
-              <div className="clear" />
 
               <div className="map">
                 <div className="mapouter">

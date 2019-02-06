@@ -73,6 +73,7 @@ export default class CustomDocument extends Document {
                 max-width: 1240px;
                 margin-right: auto;
                 margin-left: auto;
+                padding: 15px 15px;
               }
 
               .side-drawer {

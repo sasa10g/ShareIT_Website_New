@@ -61,6 +61,12 @@ export const social = css`
     vertical-align: middle;
     margin: 0 5px;
   }
+  @media only screen and (max-width: ${styles.breakpoints.md}) {
+    float: unset;
+  }
+  @media only screen and (max-width: ${styles.breakpoints.xs}) {
+    display: block;
+  }
 `;
 
 /** FooterContact */
@@ -98,37 +104,11 @@ export const footerContactHalf = css`
   grid-column-gap: 100px;
   grid-row-gap: 20px;
 
-  //Mixins
-  @mixin button($hoverbg: none) {
+  @media only screen and (max-width: ${styles.breakpoints.md}) {
     display: block;
-    height: 51px;
-    width: 179px;
-    border-radius: 25.5px;
-    line-height: 51px;
-    letter-spacing: 0.8px;
-    font-weight: 600;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $white;
-    background-image: linear-gradient(to right, #49c2f5, #2788ff);
-    &:hover {
-      border: 2px solid $border_blue;
-      line-height: 48px;
-      text-decoration: none;
-      color: $black;
-      background: $hoverbg;
-      @include fade-out(border-color);
-    }
   }
 
-  @mixin fade-out($animate_what) {
-    -webkit-transition: $animate_what 0.3s ease-out;
-    -moz-transition: $animate_what 0.3s ease-out;
-    -o-transition: $animate_what 0.3s ease-out;
-    transition: $animate_what 0.3s ease-out;
-  }
+  //Mixi
 
   .footer-contact-half-left {
     grid-area: left;
@@ -186,7 +166,10 @@ export const footerContactHalf = css`
       &:hover {
         //background: #f5f5f5;
         border-bottom: 1px solid ${styles.colors.borderBlue};
-        @include fade-out(border-color);
+        -webkit-transition: border-color 0.3s ease-out;
+        -moz-transition: border-color 0.3s ease-out;
+        -o-transition: border-color 0.3s ease-out;
+        transition: border-color 0.3s ease-out;
       }
     }
   }
@@ -208,14 +191,17 @@ export const footerContactHalf = css`
 
   .form-con:focus-within {
     background: #f5f5f5;
-    @include fade-out(background-color);
+    -webkit-transition: background-color 0.3s ease-out;
+    -moz-transition: background-color 0.3s ease-out;
+    -o-transition: background-color 0.3s ease-out;
+    transition: background-color 0.3s ease-out;
     color: ${styles.colors.formInput};
   }
 
   .ctch {
     //reCAPTCHA
     float: left;
-    width: 292px;
+    //width: 292px;
     padding-bottom: 10px;
     padding-right: 34px;
   }
@@ -227,6 +213,7 @@ export const footerContactHalf = css`
 
   .form-con-s button {
     float: right;
+    font-family: ${styles.fonts.raleway};
     font-weight: 600;
     text-align: center;
     font-size: 14px;
@@ -246,7 +233,10 @@ export const footerContactHalf = css`
     &:hover {
       background: ${styles.colors.borderBlue};
       line-height: 51px;
-      @include fade-out(background-color);
+      -webkit-transition: background-color 0.3s ease-out;
+      -moz-transition: background-color 0.3s ease-out;
+      -o-transition: background-color 0.3s ease-out;
+      transition: background-color 0.3s ease-out;
       color: ${styles.colors.white};
     }
   }
@@ -266,6 +256,47 @@ export const footerContactHalf = css`
       left: 0;
       top: 0;
       width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: ${styles.breakpoints.lg}) {
+    .footer-contact-half-right-half {
+      display: block;
+    }
+
+    .con-left {
+      float: unset;
+    }
+
+    .con-right {
+      float: unset;
+    }
+  }
+
+  @media only screen and (max-width: ${styles.breakpoints.md}) {
+    .footer-contact-half-right {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width: ${styles.breakpoints.xs}) {
+    .con-left {
+      float: none;
+      width: auto;
+    }
+    .con-right {
+      float: none;
+      width: auto;
+      margin-top: 15px;
+    }
+    .contact h3 {
+      padding-bottom: 13px;
+    }
+    .ctch img {
+      width: 100%;
+    }
+    .flogo {
+      margin-bottom: 15px;
     }
   }
 `;
