@@ -15,20 +15,7 @@ class FooterLine extends Component {
 
   render() {
     return (
-      /* Test */
       <footer>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
         <div css={footIn}>
           <div className="container">
             <div className="">
