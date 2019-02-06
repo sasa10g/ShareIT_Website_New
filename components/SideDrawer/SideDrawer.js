@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
-import {} from './side-drawer-style';
+import { sideDrawerLogo } from './side-drawer-style';
 import NavItem from '../Header/NavItem';
-import SideLogo from '../SideDrawer/SideLogo';
 import BackDrop from '../BackDrop/BackDrop';
 import menuItems from '../Header/menuItems';
+import Logo from '../Header/Logo';
 
 class SideDrawer extends Component {
   state = {
@@ -53,7 +53,7 @@ class SideDrawer extends Component {
               onClick={() => this.setActiveLink(index)}
             />
           ))}
-          <SideLogo />
+          <Logo src={'./static/sideLogo.png'} style={sideDrawerLogo} />
         </ul>
       </nav>
     );

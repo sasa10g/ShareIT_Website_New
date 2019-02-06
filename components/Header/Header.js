@@ -8,7 +8,12 @@ import NavItem from './NavItem';
 import HamburgerButton from '../SideDrawer/HamburgerButton';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import menuItems from './menuItems';
-import { headerStyles, navStyles, navListStyles } from './header-styles';
+import {
+  headerStyles,
+  navStyles,
+  navListStyles,
+  logoStyles,
+} from './header-styles';
 
 class Header extends Component {
   state = {
@@ -68,7 +73,7 @@ class Header extends Component {
     return (
       <header css={headerStyles}>
         <nav css={navStyles}>
-          <Logo />
+          <Logo src={'./static/logo.png'} style={logoStyles} />
           <div className="spacer" />
           <div className="toolbar_navigation-items menu">
             <ul css={navListStyles}>
