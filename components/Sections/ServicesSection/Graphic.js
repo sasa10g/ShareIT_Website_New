@@ -3,17 +3,8 @@ import React from 'react';
 import { css, jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import styles from '../../utils/styles';
-
-const containerStyles = css`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  list-style: none;
-  width: 25%;
-  max-width: 25%;
-`;
+import styles from '../../../utils/styles';
+import { graphicContainerStyles } from '../section-styles';
 
 const imgStyles = css`
   display: inline-block;
@@ -21,6 +12,8 @@ const imgStyles = css`
 `;
 
 const textStyles = css`
+  margin: 0;
+  margin-top: 10px;
   display: block;
   font-weight: 500;
   color: ${styles.colors.textColor};
@@ -29,11 +22,11 @@ const textStyles = css`
   padding-top: 0;
 `;
 
-const Graphic = ({ href, imgSrc, text }) => (
-  <li css={containerStyles}>
+const Graphic = ({ href, imgSrc, text, alt = '' }) => (
+  <li css={graphicContainerStyles}>
     <div>
-      <Link href={href} css={imgStyles}>
-        <img src={imgSrc} alt="" />
+      <Link href={href}>
+        <img src={imgSrc} alt={alt} css={imgStyles} />
       </Link>
     </div>
     <p css={textStyles}>{text}</p>
@@ -44,6 +37,7 @@ Graphic.propTypes = {
   href: PropTypes.string.isRequired,
   imgSrc: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  alt: PropTypes.string,
 };
 
 export default Graphic;
