@@ -9,6 +9,8 @@ import socialItem from './socialItems';
 class FooterLine extends Component {
   state = {
     socialItem,
+    footerText: 'Copyright © 2019 Share IT. All rights reserved.',
+    footerSocialTitle: 'Social Networks:',
   };
 
   render() {
@@ -28,16 +30,15 @@ class FooterLine extends Component {
         <br />
 
         <div css={footIn}>
-          <div css={container}>
-            <div className="col-lg-9 col-md-9">
+          <div className="container">
+            <div className="">
               <a href="/" css={fLogo}>
                 <Logo src={'/static/footerLogo.png'} />
               </a>
-              <span>Copyright © 2019 Share IT. All rights reserved.</span>
-            </div>
-            <div className="col-lg-3 col-md-3">
+              <span>{this.state.footerText}</span>
+
               <div css={social}>
-                <p>Social Networks:</p>
+                <p>{this.state.footerSocialTitle}</p>
                 {this.state.socialItem.map(link => (
                   <Social
                     key={link.text}
