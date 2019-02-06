@@ -15,31 +15,6 @@ export const headerStyles = css`
     flex: 1;
   }
 
-  .menu {
-    float: right;
-    padding-top: 13px;
-    li {
-      display: inline-block;
-      a {
-        color: $white;
-        font-size: 16px;
-        font-weight: 600;
-        padding: 0 0 0 0px;
-        display: block;
-        margin-left: 30px;
-        text-decoration: none;
-        &:hover {
-          color: #45baf6;
-          @include fade-out(color);
-        }
-      }
-    }
-  }
-
-  .active-link {
-    color: #45baf6 !important;
-  }
-
   @media only screen and (max-width: ${styles.breakpoints.lg}) {
     .toolbar_navigation-items {
       display: none;

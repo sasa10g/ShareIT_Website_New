@@ -16,6 +16,7 @@ export default {
     sm: '500px',
     md: '767px',
     lg: '1023px',
+    sm: '768px',
   },
   fonts: {
     raleway: `'Raleway', sans-serif`,
