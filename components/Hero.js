@@ -18,13 +18,16 @@ const HeroContainer = styled.div`
   }
 
   @media only screen and (max-width: ${styles.breakpoints.md}) {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
     padding-bottom: 45%;
     background: 0 0;
     background-position: 50%;
     background-image: ${({ imgSrc }) => `url('${imgSrc}')`};
   }
 
-  @media only screen and (max-width: ${styles.breakpoints.md}) {
+  @media only screen and (min-width: ${styles.breakpoints
+      .md}) and (max-width: ${styles.breakpoints.lg}) {
     padding: calc(17% + 170px) 15% 45% 15%;
   }
 `;
@@ -46,7 +49,7 @@ const Title = styled.h1`
     font-size: 40px;
   }
 
-  @media only screen and (max-width: ${styles.breakpoints.md}) {
+  @media only screen and (min-width: ${styles.breakpoints.md}) {
     font-size: 60px;
     margin-bottom: 0;
   }
