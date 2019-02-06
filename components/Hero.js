@@ -31,7 +31,6 @@ const HeroContainer = styled.div`
 
 const Title = styled.h1`
   margin: 0;
-  margin-bottom: 70px;
   padding-bottom: 70px;
   font-weight: 600;
   font-size: 72px;

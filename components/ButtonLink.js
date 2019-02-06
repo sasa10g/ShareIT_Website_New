@@ -8,6 +8,7 @@ import styles from '../utils/styles';
 const buttonStyles = css`
   box-sizing: border-box;
   display: block;
+  margin-top: 70px;
   height: 51px;
   width: 179px;
   border-radius: 25.5px;
