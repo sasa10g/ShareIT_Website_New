@@ -5,13 +5,12 @@ import styles from '../../utils/styles';
 export const Section = styled.section`
   display: flex;
   background-color: ${({ background }) => background || styles.colors.white};
-  flex-direction: column;
+  flex-direction: ${({ direction }) => direction || 'column'};
   align-items: center;
   align-items: center;
   padding: 0 5%;
   padding-top: 170px;
-  margin-top: 110px;
-  padding-bottom: ${({ paddingBottom }) => (paddingBottom ? '110px' : '0')};
+  padding-bottom: 110px;
 `;
 
 export const innerFlexContainerStyles = css`

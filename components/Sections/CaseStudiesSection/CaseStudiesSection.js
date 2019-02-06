@@ -7,7 +7,7 @@ import Graphic from './Graphic';
 import styles from '../../../utils/styles';
 
 const CaseStudiesSection = () => (
-  <Section background={styles.colors.containerGray} paddingBottom>
+  <Section background={styles.colors.containerGray}>
     <SubHeading text="Case" boldedText="Studies" />
     <ul css={innerFlexContainerStyles}>
       <Graphic text="Case Study Title" imgSrc="/static/ic1.png" href="#" />
