@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { jsx } from '@emotion/core';
 import { contactFooter, footerContactHalf } from './footer-style';
+import GMap from './GMap';
 
 class FooterContact extends Component {
   state = {
@@ -16,6 +17,13 @@ class FooterContact extends Component {
     errorEmail: '',
     errorSubject: '',
     errorMessage: '',
+
+    mobile: 'Mobile: 123-456 -789',
+    tel: 'Tel: 123-456-7890',
+    fax: 'Fax: 123-456-7890',
+    address: 'Narodnog Fronta 55A,',
+    zip: '21000 Novi Sad,',
+    country: 'Serbia',
   };
 
   handleSubmit = event => {
@@ -199,42 +207,25 @@ class FooterContact extends Component {
                 <div className="con-left">
                   <h3>Call Us</h3>
                   <p>
-                    Mobile: 123-456 -789
+                    {this.state.mobile}
                     <br />
-                    Tel: 123-456-7890
+                    {this.state.tel}
                     <br />
-                    Fax: 123-456-7890
+                    {this.state.fax}
                   </p>
                 </div>
                 <div className="con-right">
                   <h3>Our Address</h3>
                   <p>
-                    Narodnog Fronta 55A,
+                    {this.state.address}
                     <br />
-                    21000 Novi Sad,
+                    {this.state.zip}
                     <br />
-                    Serbia
+                    {this.state.country}
                   </p>
                 </div>
               </div>
-
-              <div className="map">
-                <div className="mapouter">
-                  <div className="gmap_canvas">
-                    <iframe
-                      title="maps"
-                      width="663"
-                      height="380"
-                      id="gmap_canvas"
-                      src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJs6nCzFwQW0cRprHhV2U8sjY&key=AIzaSyAAmABSKLDgAGRfswraDEcmL6S-ARpZaok"
-                      frameBorder="0"
-                      scrolling="no"
-                      marginHeight="0"
-                      marginWidth="0"
-                    />
-                  </div>
-                </div>
-              </div>
+              <GMap width="663" height="380" />
             </div>
           </div>
         </div>
