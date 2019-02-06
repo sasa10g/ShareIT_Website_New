@@ -69,6 +69,12 @@ export default class CustomDocument extends Document {
                 color: #45baf6 !important;
               }
 
+              .container {
+                max-width: 1240px;
+                margin-right: auto;
+                margin-left: auto;
+              }
+
               .side-drawer {
                 height: 100%;
                 background: rgba(255, 255, 255, 0.98);
