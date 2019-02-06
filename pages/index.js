@@ -6,6 +6,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import ButtonLink from '../components/ButtonLink';
+import ServicesSection from '../components/ServicesSection';
 
 const Index = () => (
   <Layout title="Share IT Web Development">
@@ -17,6 +18,7 @@ const Index = () => (
     >
       <ButtonLink href="/about-us" text="Read More" />
     </Hero>
+    <ServicesSection />
   </Layout>
 );
 
