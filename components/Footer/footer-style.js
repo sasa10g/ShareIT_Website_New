@@ -246,7 +246,7 @@ export const footerContactHalf = css`
     &:hover {
       background: ${styles.colors.borderBlue};
       line-height: 51px;
-
+      @include fade-out(background-color);
       color: ${styles.colors.white};
     }
   }
