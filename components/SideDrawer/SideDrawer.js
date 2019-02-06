@@ -6,36 +6,12 @@ import {} from './side-drawer-style';
 import NavItem from '../Header/NavItem';
 import SideLogo from '../SideDrawer/SideLogo';
 import BackDrop from '../BackDrop/BackDrop';
+import menuItems from '../Header/menuItems';
 
 class SideDrawer extends Component {
   state = {
     sideDrawerOpen: true,
-    links: [
-      {
-        href: '/',
-        text: 'Home',
-      },
-      {
-        href: '/services',
-        text: 'Services',
-      },
-      {
-        href: '/case-studies',
-        text: 'Case Studies',
-      },
-      {
-        href: '/how-we-work',
-        text: 'How We work',
-      },
-      {
-        href: '/about-us',
-        text: 'About Us',
-      },
-      {
-        href: '/contact-us',
-        text: 'Contact Us',
-      },
-    ],
+    menuItems,
   };
 
   static propTypes = {
@@ -49,7 +25,7 @@ class SideDrawer extends Component {
 
   setActiveLink = id => {
     this.setState(state => ({
-      links: state.links.map((link, index) => {
+      menuItems: state.menuItems.map((link, index) => {
         if (index === id) {
           return { ...link, active: true };
         } else {
@@ -68,7 +44,7 @@ class SideDrawer extends Component {
       >
         {this.props.show && <BackDrop click={() => this.props.onClick()} />}
         <ul>
-          {this.state.links.map((link, index) => (
+          {this.state.menuItems.map((link, index) => (
             <NavItem
               key={link.text}
               href={link.href}
