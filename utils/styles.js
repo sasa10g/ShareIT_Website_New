@@ -14,8 +14,8 @@ export default {
   breakpoints: {
     xs: '375px',
     sm: '500px',
-    md: '767px',
-    lg: '1023px',
+    md: '768px',
+    lg: '1024px',
   },
   fonts: {
     raleway: `'Raleway', sans-serif`,
