@@ -5,6 +5,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
+import ButtonLink from '../components/ButtonLink';
 
 const Index = () => (
   <Layout title="Share IT Web Development">
@@ -13,7 +14,9 @@ const Index = () => (
       title="Enterprise<br/> Software<br/> Development"
       textColor="light"
       uppercase
-    />
+    >
+      <ButtonLink href="/about-us" text="Read More" />
+    </Hero>
   </Layout>
 );
 
