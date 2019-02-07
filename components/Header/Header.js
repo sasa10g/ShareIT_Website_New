@@ -20,7 +20,6 @@ class Header extends Component {
   };
 
   static propTypes = {
-    hamburgerButtonClickHandler: PropTypes.func.isRequired,
     router: PropTypes.shape({
       pathname: PropTypes.string,
     }),
@@ -86,10 +85,8 @@ class Header extends Component {
               ))}
             </ul>
           </div>
-
           <HamburgerButton click={this.hamburgerButtonClickHandler} />
         </nav>
-
         <SideDrawer
           show={this.state.sideDrawerOpen}
           onClick={this.closeSideDrawer}
