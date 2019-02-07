@@ -1,7 +1,6 @@
-/** @jsx jsx */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { jsx, css } from '@emotion/core';
+import { css } from '@emotion/core';
 import Link from 'next/link';
 import styles from '../utils/styles';
 

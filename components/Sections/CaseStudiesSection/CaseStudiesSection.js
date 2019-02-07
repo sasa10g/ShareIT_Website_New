@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx } from '@emotion/core';
 import SubHeading from '../../SubHeading';
 import { Section, innerFlexContainerStyles } from '../section-styles';
 import Graphic from './Graphic';

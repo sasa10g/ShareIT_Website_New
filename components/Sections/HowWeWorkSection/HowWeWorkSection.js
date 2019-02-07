@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx } from '@emotion/core';
 import { Section } from '../section-styles';
 import Card from './Card';
 
