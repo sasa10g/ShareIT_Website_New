@@ -1,46 +1,29 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Indicator from './Indicator';
 import { indicatorStyles } from './slider-styles';
 
-class IndicatorsList extends Component {
-  state = {
-    indicators: [],
-  };
+export default function IndicatorsList(props) {
+  const [indicators, setIndicators] = useState([]);
 
-  static propTypes = {
-    current: PropTypes.number.isRequired,
-    indicatorsCount: PropTypes.number.isRequired,
-  };
-
-  componentDidMount() {
-    this.loadIndicators();
-  }
-
-  componentDidUpdate = prevProps => {
-    if (this.props.current !== prevProps.current) {
-      this.loadIndicators();
-    }
-  };
-
-  loadIndicators = () => {
-    const indicators = [];
-    for (let i = 0; i < this.props.indicatorsCount + 1; i++) {
-      indicators.push(
-        <Indicator
-          key={i}
-          invisible={this.props.current + 1 === i ? true : false}
-        />
+  function loadIndicators() {
+    const newIndicators = [];
+    for (let i = 0; i < props.indicatorsCount + 1; i++) {
+      newIndicators.push(
+        <Indicator key={i} invisible={props.current + 1 === i ? true : false} />
       );
     }
-    this.setState({
-      indicators,
-    });
-  };
-
-  render() {
-    return <div css={indicatorStyles}>{this.state.indicators}</div>;
+    setIndicators(newIndicators);
   }
+
+  useEffect(() => {
+    loadIndicators();
+  });
+
+  return <div css={indicatorStyles}>{indicators}</div>;
 }
 
-export default IndicatorsList;
+IndicatorsList.propTypes = {
+  current: PropTypes.number.isRequired,
+  indicatorsCount: PropTypes.number.isRequired,
+};
