@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React, { Component } from 'react';
-import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 import Indicator from './Indicator';
 import { indicatorStyles } from './slider-styles';

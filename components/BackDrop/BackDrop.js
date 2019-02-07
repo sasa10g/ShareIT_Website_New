@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 import {
   sideDrawerCloseStyle,
@@ -13,9 +11,8 @@ import {
 
 const BackDrop = props => (
   <div css={sideDrawerCloseStyle} onClick={props.click}>
-    <section css={sectionStyles} className="model2">
+    <section css={sectionStyles}>
       <div css={menuxStyle}>
-        <div css={barStyle} />
         <div css={barStyle} />
         <div css={barStyle} />
       </div>
