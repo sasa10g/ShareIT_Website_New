@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React, { Component, createRef } from 'react';
-import { jsx } from '@emotion/core';
 import slideText from './slideText';
 import Counter from './Counter';
 import IndicatorsList from './IndicatorsList';
