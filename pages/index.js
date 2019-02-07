@@ -8,6 +8,7 @@ import Layout from '../components/Layout';
 import ButtonLink from '../components/ButtonLink';
 import ServicesSection from '../components/Sections/ServicesSection';
 import CaseStudiesSection from '../components/Sections/CaseStudiesSection';
+import HowWeWorkSection from '../components/Sections/HowWeWorkSection';
 
 const Index = () => (
   <Layout title="Share IT Web Development">
@@ -21,6 +22,7 @@ const Index = () => (
     </Hero>
     <ServicesSection />
     <CaseStudiesSection />
+    <HowWeWorkSection />
   </Layout>
 );
 
