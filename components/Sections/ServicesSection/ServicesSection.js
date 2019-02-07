@@ -1,14 +1,17 @@
 import React from 'react';
-import ButtonLink from '../../ButtonLink';
+import Container from '../../common/Container';
+import ButtonLink from '../../Buttons/ButtonLink';
 import GraphicsContainer from './GraphicsContainer';
 import SubHeading from '../../SubHeading';
-import { Section } from '../section-styles';
+import Section from '../../common/Section';
 
 const ServicesSection = () => (
   <Section>
-    <SubHeading text="Our" boldedText="Services" />
-    <GraphicsContainer />
-    <ButtonLink href="/service" text="About Services" />
+    <Container>
+      <SubHeading text="Our" boldedText="Services" />
+      <GraphicsContainer />
+      <ButtonLink href="/service" text="About Services" />
+    </Container>
   </Section>
 );
 

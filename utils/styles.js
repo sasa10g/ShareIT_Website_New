@@ -12,6 +12,7 @@ export default {
     sliderBorder: '#ededed',
   },
   breakpoints: {
+    min: '360',
     xs: '375px',
     sm: '500px',
     md: '768px',

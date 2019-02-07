@@ -16,16 +16,34 @@ const Section = styled.section`
   flex-direction: ${({ direction }) => direction || 'column'};
   justify-column: ${({ justify }) => justify || 'center'};
   align-items: ${({ align }) => align || 'center'};
-  padding: 0 5%;
+  padding: 0;
   padding-top: 170px;
   padding-bottom: 110px;
 `;
 
 Section.propTypes = {
   background: PropTypes.string,
-  direction: PropTypes.string,
-  justify: PropTypes.string,
-  align: PropTypes.string,
+  direction: PropTypes.oneOf([
+    'row',
+    'row-reverse',
+    'column',
+    'column-reverse',
+  ]),
+  justify: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'space-between',
+    'space-around',
+    'space-evenly',
+  ]),
+  align: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'baseline',
+    'stretch',
+  ]),
 };
 
 export default Section;

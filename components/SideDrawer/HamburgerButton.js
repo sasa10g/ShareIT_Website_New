@@ -11,7 +11,7 @@ const HamburgerButton = props => (
 );
 
 HamburgerButton.propTypes = {
-  click: PropTypes.click,
+  click: PropTypes.func,
 };
 
 export default HamburgerButton;

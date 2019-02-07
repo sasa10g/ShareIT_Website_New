@@ -2,6 +2,8 @@ import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import styles from '../../../utils/styles';
+import ButtonLink from '../../Buttons/ButtonLink';
+import { sectionHeading } from '../section-styles';
 
 const cardContainerStyles = css`
   display: inline-block;
@@ -12,16 +14,27 @@ const cardContainerStyles = css`
   border-radius: 9px;
 `;
 
-const Card = ({ title, text }) => (
+const textStyles = css`
+  font-family: ${styles.fonts.openSans};
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+  color: ${styles.colors.textColor};
+  margin-bottom: 63px;
+`;
+
+const Card = ({ title, text, href }) => (
   <div css={cardContainerStyles}>
-    <h2>{title}</h2>
-    <p>{text}</p>
+    <h2 css={sectionHeading}>{title}</h2>
+    <p css={textStyles}>{text}</p>
+    <ButtonLink text="Read More" href={href} />
   </div>
 );
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  href: PropTypes.string,
 };
 
 export default Card;
