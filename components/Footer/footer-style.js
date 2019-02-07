@@ -202,13 +202,15 @@ export const footerContactHalf = css`
     //reCAPTCHA
     float: left;
     //width: 292px;
+    position: relative;
+    top: -15px;
     padding-bottom: 10px;
     padding-right: 34px;
   }
 
   .form-con-s {
     margin-bottom: 10px;
-    padding: 15px 0 20px 25px;
+    padding: 0 0 20px 25px;
   }
 
   .form-con-s button {

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { jsx } from '@emotion/core';
 import { contactFooter, footerContactHalf } from './footer-style';
 import GMap from './GMap';
+import Recaptcha from 'react-recaptcha';
 
 class FooterContact extends Component {
   state = {
@@ -10,13 +11,13 @@ class FooterContact extends Component {
     email: '',
     subject: '',
     message: '',
-    recaptcha: '',
+    recaptcha: false,
 
-    errorRecaptcha: '',
     errorName: '',
     errorEmail: '',
     errorSubject: '',
     errorMessage: '',
+    errorRecaptcha: '',
 
     mobile: 'Mobile: 123-456 -789',
     tel: 'Tel: 123-456-7890',
@@ -30,7 +31,7 @@ class FooterContact extends Component {
     event.preventDefault();
     const { name, email, subject, message, recaptcha } = this.state;
 
-    if (recaptcha === '') {
+    if (recaptcha !== true) {
       this.setState({ errorRecaptcha: "Please accept that you're hooman" });
     }
     if (message === '') {
@@ -46,7 +47,7 @@ class FooterContact extends Component {
       this.setState({ errorName: 'Please fill in the name' });
     }
 
-    if (recaptcha !== '') {
+    if (recaptcha != false) {
       this.setState({ errorRecaptcha: '' });
     }
     if (message !== '') {
@@ -60,6 +61,19 @@ class FooterContact extends Component {
     }
     if (name !== '') {
       this.setState({ errorName: '' });
+    }
+  };
+
+  recaptchaLoaded() {
+    console.log('ReCaptcha Loaded.');
+  }
+
+  verifyCallback = response => {
+    if (response) {
+      this.setState({
+        recaptcha: true,
+        errorRecaptcha: '',
+      });
     }
   };
 
@@ -164,7 +178,12 @@ class FooterContact extends Component {
                 <div className="form-con-s">
                   <div className="ctch">
                     <br />
-                    ReCAPTCHA HERE!
+                    <Recaptcha
+                      sitekey="6LfTYnMUAAAAAGMndpaHhgUMDietd3e_kTWDidX4"
+                      render="explicit"
+                      verifyCallback={this.verifyCallback}
+                      onloadCallback={this.recaptchaLoaded}
+                    />
                     <br />
                   </div>
                   <button type="submit" onClick={this.handleSubmit}>

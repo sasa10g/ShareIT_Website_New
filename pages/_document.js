@@ -34,6 +34,11 @@ export default class CustomDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway"
             rel="stylesheet"
           />
+          <script
+            src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+            async
+            defer
+          />
         </Head>
         <body>
           <Global
