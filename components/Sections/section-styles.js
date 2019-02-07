@@ -1,17 +1,5 @@
 import { css } from '@emotion/core';
-import styled from '@emotion/styled';
 import styles from '../../utils/styles';
-
-export const Section = styled.section`
-  display: flex;
-  background-color: ${({ background }) => background || styles.colors.white};
-  flex-direction: ${({ direction }) => direction || 'column'};
-  align-items: center;
-  align-items: center;
-  padding: 0 5%;
-  padding-top: 170px;
-  padding-bottom: 110px;
-`;
 
 export const innerFlexContainerStyles = css`
   display: flex;
@@ -39,4 +27,13 @@ export const graphicContainerStyles = css`
     width: none;
     max-width: none;
   }
+`;
+
+export const sectionHeading = css`
+  color: ${styles.colors.textColor};
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  padding-bottom: 50px;
+  margin-bottom: 0;
 `;
