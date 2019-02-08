@@ -14,6 +14,22 @@ const containerStyles = css`
   align-items: center;
   grid-gap: 100px 6%;
   padding: 0 15px;
+
+  p {
+    font-family: ${styles.fonts.openSans};
+    color: ${styles.colors.textColor};
+    font-size: 20px;
+    letter-spacing: 0.1px;
+    font-weight: 400;
+  }
+
+  li {
+    font-family: ${styles.fonts.openSans};
+    color: ${styles.colors.textColor};
+    font-size: 20px;
+    letter-spacing: 0.1px;
+    font-weight: 400;
+  }
 `;
 
 const ServicesSection = () => (
