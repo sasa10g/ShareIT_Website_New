@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React, { Component } from 'react';
-import { jsx } from '@emotion/core';
 import { contactFooter, footerContactHalf } from './footer-style';
 import GMap from './GMap';
 import Recaptcha from 'react-recaptcha';

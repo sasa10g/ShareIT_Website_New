@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx } from '@emotion/core';
 import Recaptcha from 'react-recaptcha';
 import FooterContact from '../Footer/FooterContact';
 

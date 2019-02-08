@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React, { Component } from 'react';
-import { jsx } from '@emotion/core';
 import Logo from '../Header/Logo';
 import { footIn, fLogo, social } from './footer-style';
 import Social from './Social';
