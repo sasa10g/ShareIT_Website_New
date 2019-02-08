@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React from 'react';
-import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 import { toggleButton, toggleButtonLine } from './side-drawer-style';
 

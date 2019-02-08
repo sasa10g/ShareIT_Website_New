@@ -1,7 +1,6 @@
-/** @jsx jsx */
 import React from 'react';
 import ScrollUp from 'react-scroll-up';
-import { jsx, css } from '@emotion/core';
+import { css } from '@emotion/core';
 
 const scrollStyles = css`
   display: inline-block;

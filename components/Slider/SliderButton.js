@@ -1,7 +1,5 @@
-/** @jsx jsx */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { jsx } from '@emotion/core';
 import { arrowStyles } from './slider-styles';
 
 const SliderButton = ({ imgSrc, text, onClick, className }) => (

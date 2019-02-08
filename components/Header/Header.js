@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import React, { Component } from 'react';
-import { jsx } from '@emotion/core';
 import PropTypes from 'prop-types';
 import { withRouter } from 'next/router';
 import Logo from './Logo';
