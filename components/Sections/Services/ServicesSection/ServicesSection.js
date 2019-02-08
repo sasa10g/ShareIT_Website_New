@@ -1,34 +1,27 @@
 import React from 'react';
 import { css } from '@emotion/core';
+import Container from '../../../common/Container';
+import Flex from '../../../common/Flex';
+import Graphic from './Graphic';
+import Section from '../../../common/Section';
+import SubHeading from '../../../SubHeading';
+import styles from '../../../../utils/styles';
 
-import Flex from '../../common/Flex';
-import Section from '../../common/Section';
-import Container from '../../common/Container';
+const containerStyles = css`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(300px, auto));
+  align-items: center;
+  grid-gap: 100px 6%;
+  padding: 0 15px;
+`;
 
 const ServicesSection = () => (
-  <Section>
-    <Container
-      css={css`
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(auto-fill, minmax(300px, auto));
-        align-items: center;
-        grid-gap: 100px 6%;
-        padding: 0 15px;
-      `}
-    >
-      <Flex justify="center" align="center">
-        <img
-          src="/static/icon1.png"
-          css={css`
-            display: inline-block;
-          `}
-        />
-      </Flex>
-      <Flex direction="column">
-        <h2>
-          Enterprise Software <b>Development</b>
-        </h2>
+  <Section background={styles.colors.containerGray}>
+    <Container css={containerStyles}>
+      <Graphic imgSrc="/static/icon1.png" />
+      <Flex direction="column" justify="flex-start">
+        <SubHeading text="Enterprise Software" boldedText="Development" />
         <ul>
           <li>Intranets and Portals (SharePoint & Office 365 Based)</li>
           <li>Enterprise Applications (Azure and on-premise Applications)</li>
@@ -39,28 +32,18 @@ const ServicesSection = () => (
           </li>
         </ul>
       </Flex>
-
       <Flex direction="column">
-        <h2>
-          Mobile <b>Apps</b>
-        </h2>
+        <SubHeading text="Mobile" boldedText="Apps" />
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s
         </p>
       </Flex>
-      <Flex justify="center" align="center">
-        <img src="/static/icon2.png" />
-      </Flex>
-      <Flex justify="center" align="center">
-        <img src="/static/icon3.png" />
-      </Flex>
-
-      <Flex direction="column">
-        <h2>
-          Web Site <b>Development</b>
-        </h2>
+      <Graphic imgSrc="/static/icon2.png" />
+      <Graphic imgSrc="/static/icon3.png" />
+      <Flex direction="column" justify="flex-start">
+        <SubHeading text="Web Site" boldedText="Development" />
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -68,18 +51,14 @@ const ServicesSection = () => (
         </p>
       </Flex>
       <Flex direction="column">
-        <h2>
-          Research & <b>Development</b>
-        </h2>
+        <SubHeading text="Research &" boldedText="Development" />
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s
         </p>
       </Flex>
-      <Flex justify="center" align="center">
-        <img src="/static/icon4.png" />
-      </Flex>
+      <Graphic imgSrc="/static/icon4.png" />
     </Container>
   </Section>
 );

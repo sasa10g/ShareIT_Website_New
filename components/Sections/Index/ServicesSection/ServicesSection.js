@@ -1,9 +1,9 @@
 import React from 'react';
-import Container from '../../common/Container';
-import ButtonLink from '../../Buttons/ButtonLink';
+import Container from '../../../common/Container';
+import ButtonLink from '../../../Buttons/ButtonLink';
 import GraphicsContainer from './GraphicsContainer';
-import SubHeading from '../../SubHeading';
-import Section from '../../common/Section';
+import SubHeading from '../../../SubHeading';
+import Section from '../../../common/Section';
 
 const ServicesSection = () => (
   <Section>

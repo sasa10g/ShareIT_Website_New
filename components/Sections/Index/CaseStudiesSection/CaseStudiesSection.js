@@ -1,10 +1,10 @@
 import React from 'react';
-import SubHeading from '../../SubHeading';
-import Section from '../../common/Section';
+import SubHeading from '../../../SubHeading';
+import Section from '../../../common/Section';
 import Graphic from './Graphic';
-import { innerFlexContainerStyles } from '../section-styles';
-import styles from '../../../utils/styles';
-import Container from '../../common/Container';
+import { innerFlexContainerStyles } from '../../section-styles';
+import styles from '../../../../utils/styles';
+import Container from '../../../common/Container';
 
 const CaseStudiesSection = () => (
   <Section background={styles.colors.containerGray}>

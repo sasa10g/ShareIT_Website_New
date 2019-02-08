@@ -1,6 +1,6 @@
 import React from 'react';
-import Container from '../../common/Container';
-import Section from '../../common/Section';
+import Container from '../../../common/Container';
+import Section from '../../../common/Section';
 import Card from './Card';
 
 const HowWeWorkSection = () => (

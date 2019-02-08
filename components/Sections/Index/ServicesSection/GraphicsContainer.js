@@ -1,6 +1,6 @@
 import React from 'react';
 import Graphic from './Graphic';
-import { innerFlexContainerStyles } from '../section-styles';
+import { innerFlexContainerStyles } from '../../section-styles';
 
 const GraphicsContainer = () => (
   <ul css={innerFlexContainerStyles}>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { sectionHeading } from '../section-styles';
-import Container from '../../common/Container';
-import Flex from '../../common/Flex';
-import Section from '../../common/Section';
-import ButtonSubmit from '../../Buttons/ButtonSubmit';
-import Input from '../../Input';
-import styles from '../../../utils/styles';
+import { sectionHeading } from '../../section-styles';
+import Container from '../../../common/Container';
+import Flex from '../../../common/Flex';
+import Section from '../../../common/Section';
+import ButtonSubmit from '../../../Buttons/ButtonSubmit';
+import Input from '../../../Input';
+import styles from '../../../../utils/styles';
 
 const textStyles = css`
   display: block;

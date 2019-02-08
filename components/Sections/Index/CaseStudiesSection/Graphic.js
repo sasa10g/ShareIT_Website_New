@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import styles from '../../../utils/styles';
+import styles from '../../../../utils/styles';
 
 const textStyles = css`
   display: flex;

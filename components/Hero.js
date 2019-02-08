@@ -45,6 +45,18 @@ const Title = styled.h1`
     (props.color === 'light' && styles.colors.white) ||
     (props.color === 'dark' && styles.colors.textColor)};
 
+  + p {
+    max-width: 50%;
+    line-height: 1.36;
+    letter-spacing: 0.1px;
+    font-weight: 400;
+    font-family: ${styles.fonts.openSans};
+    font-size: 28px;
+    color: ${props =>
+      (props.color === 'light' && styles.colors.white) ||
+      (props.color === 'dark' && styles.colors.textColor)};
+  }
+
   @media only screen and (max-width: ${styles.breakpoints.sm}) {
     font-size: 40px;
   }

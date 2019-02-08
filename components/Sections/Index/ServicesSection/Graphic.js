@@ -2,8 +2,8 @@ import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import styles from '../../../utils/styles';
-import { graphicContainerStyles } from '../section-styles';
+import styles from '../../../../utils/styles';
+import { graphicContainerStyles } from '../../section-styles';
 
 const imgStyles = css`
   display: inline-block;

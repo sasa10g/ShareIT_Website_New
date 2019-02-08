@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
-import styles from '../../../utils/styles';
-import ButtonLink from '../../Buttons/ButtonLink';
-import { sectionHeading } from '../section-styles';
+import styles from '../../../../utils/styles';
+import ButtonLink from '../../../Buttons/ButtonLink';
+import { sectionHeading } from '../../section-styles';
 
 const cardContainerStyles = css`
   display: inline-block;

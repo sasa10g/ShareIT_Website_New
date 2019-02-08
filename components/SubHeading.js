@@ -1,26 +1,31 @@
 import React from 'react';
-import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import styles from '../utils/styles';
 
-const headingStyles = css`
+const Heading = styled.h2`
   margin: 0;
   font-weight: 500;
   color: ${styles.colors.textColor};
   font-size: 48px;
   letter-spacing: 0.2px;
-  text-align: center;
+  text-align: ${({ align }) => align};
 `;
 
-const SubHeading = ({ text, boldedText }) => (
-  <h2 css={headingStyles}>
+Heading.defaultProps = {
+  align: 'center',
+};
+
+const SubHeading = ({ text, boldedText, align }) => (
+  <Heading align={align}>
     {text} {boldedText && <b>{boldedText}</b>}
-  </h2>
+  </Heading>
 );
 
 SubHeading.propTypes = {
   text: PropTypes.string.isRequired,
   boldedText: PropTypes.string,
+  align: PropTypes.oneOf(['left', 'center', 'right']),
 };
 
 export default SubHeading;
