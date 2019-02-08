@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Flex = styled.div`
   display: flex;
   flex-direction: ${({ direction }) => direction};
-  justify-column: ${({ justify }) => justify};
+  justify-content: ${({ justify }) => justify};
   align-items: ${({ align }) => align};
 `;
 
