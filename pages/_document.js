@@ -34,6 +34,11 @@ export default class CustomDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway"
             rel="stylesheet"
           />
+          <script
+            src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+            async
+            defer
+          />
         </Head>
         <body>
           <Global
@@ -50,7 +55,7 @@ export default class CustomDocument extends Document {
                 li {
                   display: inline-block;
                   a {
-                    color: $white;
+                    color: ${styles.colors.white};
                     font-size: 16px;
                     font-weight: 600;
                     padding: 0 0 0 0px;
@@ -58,7 +63,7 @@ export default class CustomDocument extends Document {
                     margin-left: 30px;
                     text-decoration: none;
                     &:hover {
-                      color: #45baf6;
+                      color: ${styles.colors.linkActive};
                       @include fade-out(color);
                     }
                   }
@@ -66,7 +71,14 @@ export default class CustomDocument extends Document {
               }
 
               .active-link {
-                color: #45baf6 !important;
+                color: ${styles.colors.linkActive} !important;
+              }
+
+              .container {
+                max-width: 1240px;
+                margin-right: auto;
+                margin-left: auto;
+                padding: 15px 15px;
               }
 
               .side-drawer {
@@ -82,13 +94,13 @@ export default class CustomDocument extends Document {
                 transition-duration: 0.3s;
                 transition-timing-function: ease-in;
                 a {
-                  color: #3a3a3a !important;
+                  color: ${styles.colors.textColor} !important;
                   text-decoration: none !important;
                   font-size: 20px;
                   line-height: 3.5em;
                   &:hover,
                   &:active {
-                    color: #45baf6;
+                    color: ${styles.colors.linkActive};
                     text-decoration: none;
                     -webkit-transition: color 0.2s ease-out;
                     -moz-transition: color 0.2s ease-out;
