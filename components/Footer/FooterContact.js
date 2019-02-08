@@ -4,6 +4,7 @@ import { jsx } from '@emotion/core';
 import { contactFooter, footerContactHalf } from './footer-style';
 import GMap from './GMap';
 import Recaptcha from 'react-recaptcha';
+import { contactService } from './contactService';
 
 class FooterContact extends Component {
   state = {
@@ -30,37 +31,60 @@ class FooterContact extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { name, email, subject, message, recaptcha } = this.state;
+    if (
+      name !== '' &&
+      email !== '' &&
+      subject !== '' &&
+      message !== '' &&
+      recaptcha !== ''
+    ) {
+      var json = {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        recaptcha: recaptcha,
+      };
+      contactService
+        .sendInquiry(json)
+        .then(resp => {
+          alert('Message Sent');
+        })
+        .catch(e => {
+          alert(e);
+        });
+    } else {
+      if (recaptcha !== true) {
+        this.setState({ errorRecaptcha: "Please accept that you're hooman" });
+      }
+      if (message === '') {
+        this.setState({ errorMessage: 'Please fill in the message' });
+      }
+      if (subject === '') {
+        this.setState({ errorSubject: 'Please fill in the subject' });
+      }
+      if (email === '') {
+        this.setState({ errorEmail: 'Please fill in the email' });
+      }
+      if (name === '') {
+        this.setState({ errorName: 'Please fill in the name' });
+      }
 
-    if (recaptcha !== true) {
-      this.setState({ errorRecaptcha: "Please accept that you're hooman" });
-    }
-    if (message === '') {
-      this.setState({ errorMessage: 'Please fill in the message' });
-    }
-    if (subject === '') {
-      this.setState({ errorSubject: 'Please fill in the subject' });
-    }
-    if (email === '') {
-      this.setState({ errorEmail: 'Please fill in the email' });
-    }
-    if (name === '') {
-      this.setState({ errorName: 'Please fill in the name' });
-    }
-
-    if (recaptcha != false) {
-      this.setState({ errorRecaptcha: '' });
-    }
-    if (message !== '') {
-      this.setState({ errorMessage: '' });
-    }
-    if (subject !== '') {
-      this.setState({ errorSubject: '' });
-    }
-    if (email !== '') {
-      this.setState({ errorEmail: '' });
-    }
-    if (name !== '') {
-      this.setState({ errorName: '' });
+      if (recaptcha != false) {
+        this.setState({ errorRecaptcha: '' });
+      }
+      if (message !== '') {
+        this.setState({ errorMessage: '' });
+      }
+      if (subject !== '') {
+        this.setState({ errorSubject: '' });
+      }
+      if (email !== '') {
+        this.setState({ errorEmail: '' });
+      }
+      if (name !== '') {
+        this.setState({ errorName: '' });
+      }
     }
   };
 
