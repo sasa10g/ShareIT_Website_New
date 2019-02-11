@@ -1,8 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import Container from '../../../common/Container';
-import Flex from '../../../common/Flex';
-import Graphic from './Graphic';
+import Graphic from '../../Index/CaseStudiesSection/Graphic';
 import Input from '../../../Input';
 import Select from '../../../Select';
 import Section from '../../../common/Section';

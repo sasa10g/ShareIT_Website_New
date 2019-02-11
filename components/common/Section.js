@@ -17,7 +17,7 @@ const Section = styled.section`
   justify-column: ${({ justify }) => justify || 'center'};
   align-items: ${({ align }) => align || 'center'};
   padding: 0;
-  padding-top: 170px;
+  padding-top: 150px;
   padding-bottom: 110px;
 `;
 
