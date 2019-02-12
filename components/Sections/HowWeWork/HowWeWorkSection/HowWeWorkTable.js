@@ -13,19 +13,19 @@ const containerBackStyles = css`
 
 const tableStyle = css`
   position: relative;
-  z-index: 2;
+  z-index: 1;
   margin-top: 100px;
+  border-spacing: 0;
   th {
     font-size: 12px;
     h3 {
-      border: none;
+      border: 0 !important;
       line-height: 1.19;
       letter-spacing: 0.2px;
       font-family: ${styles.fonts.raleway};
       font-size: 32px;
       font-weight: normal;
       text-align: center;
-
       color: ${styles.colors.textColor};
     }
   }
@@ -35,8 +35,8 @@ const tableStyle = css`
   }
 
   tbody tr td {
+    border: 2px solid #ededed;
     height: 50px;
-    border-top: 2px solid ${styles.colors.sliderBorder} !important;
     font-family: ${styles.fonts.openSans};
     font-weight: normal;
     font-size: 14px;
@@ -52,14 +52,16 @@ const tableStyle = css`
 
   .row-fir {
     width: 35%;
-    border: 0;
+    border-top: 0 !important;
+    border-right: 0;
+    border-left: 0;
     background-color: ${styles.colors.white};
   }
 
   .row-sec {
     width: 31%;
-    border: 0;
-    border-top: 0;
+    border-top: 0 !important;
+    border-right: 0;
     text-align: center;
     background-color: #f5f5f5;
     a {
@@ -77,14 +79,19 @@ const tableStyle = css`
   }
 
   .row-thr {
-    border: 0;
     text-align: center;
+    border-right: 0;
+    border-top: 0;
     background-color: ${styles.colors.white};
     a {
       margin: auto;
       margin-top: 50px;
       margin-bottom: 50px;
     }
+  }
+
+  .lst {
+    border-bottom: 0px;
   }
 `;
 
@@ -235,11 +242,11 @@ const HowWeWorkTable = () => (
             </td>
           </tr>
           <tr>
-            <td className="row-fir" />
-            <td className="row-sec">
+            <td className="row-fir lst" />
+            <td className="row-sec lst">
               <ButtonLink text="Read More" href="/time-and-materials" />
             </td>
-            <td className="row-thr">
+            <td className="row-thr lst">
               <ButtonLink text="Read More" href="/fixed-price" />
             </td>
           </tr>
