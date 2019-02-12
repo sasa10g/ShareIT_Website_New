@@ -6,10 +6,20 @@ const imgStyles = css`
   width: 24px;
 `;
 
-const Graphic = ({ imgSrc }) => <img css={imgStyles} src={imgSrc} />;
+const hwwGraphicStyle = css`
+  display: flex;
+  align-items: center;
+`;
 
+const Graphic = ({ imgSrc, text }) => (
+  <div css={hwwGraphicStyle}>
+    <img css={imgStyles} src={imgSrc} />
+    {text}
+  </div>
+);
 Graphic.propTypes = {
   imgSrc: PropTypes.string,
+  text: PropTypes.string,
 };
 
 export default Graphic;

@@ -1,18 +1,12 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import Container from '../../../common/Container';
-import Graphic from '../HowWeWorkSection/Graphic';
 import Section from '../../../common/Section';
+import Table from './HowWeWorkTable';
 import styles from '../../../../utils/styles';
 
 const twoConstructualModelsContainer = css`
   padding-bottom: 100px;
-`;
-
-const containerBackStyles = css`
-  background-color: #e2e2e2;
-  width: 100%;
-  padding: 150px 0 90px 0;
 `;
 
 const IntroContainer = css`
@@ -97,51 +91,7 @@ const HowWeWorkSection = () => (
         </p>
       </div>
     </Container>
-    <div css={containerBackStyles}>
-      <Container>
-        <Graphic
-          text="Project Size"
-          imgSrc="/static/how-we-work-icons/project-size.png"
-        />
-        <Graphic
-          text="Project Duration"
-          imgSrc="/static/how-we-work-icons/project-duration.png"
-        />
-        <Graphic
-          text="Requirements for project start"
-          imgSrc="/static/how-we-work-icons/requirements-for-project-start.png"
-        />
-        <Graphic
-          text="Project scope"
-          imgSrc="/static/how-we-work-icons/project-scope.png"
-        />
-        <Graphic
-          text="Change requests"
-          imgSrc="/static/how-we-work-icons/change-requests.png"
-        />
-
-        <Graphic
-          text="Project start"
-          imgSrc="/static/how-we-work-icons/project-start.png"
-        />
-        <Graphic
-          text="Client control of the progress"
-          imgSrc="/static/how-we-work-icons/client-control-of-the-progress.png"
-        />
-        <Graphic
-          text="Project cost"
-          imgSrc="/static/how-we-work-icons/project-cost.png"
-        />
-        <Graphic
-          text="Reports"
-          imgSrc="/static/how-we-work-icons/reports.png"
-        />
-        <Graphic
-          text="Methodology"
-          imgSrc="/static/how-we-work-icons/methodology.png"
-        />
-      </Container>
-    </div>
+    <Table />
     <Container css={implementationAndPaymentContainer}>
       <div css={IntroContainer}>
         <h1>
